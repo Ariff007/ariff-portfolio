@@ -1,6 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import mySetup3 from "../public/images/mySetup3.jpg"
+import projects from "../public/images/projects.jpg"
+import heroImage6 from "../public/images/heroImage6.jpg";
+import machineLearning2 from "../public/images/machineLearning2.jpg";
 import Link from "next/link";
 import BentoTile from "./BentoGrid";
 import { FaGithub, FaLinkedin, FaTwitter, FaDownload, FaInfoCircle, FaBrain, FaNetworkWired, FaDesktop, FaBlog, FaProjectDiagram, FaHtml5, FaCss3, FaPython, FaReact, FaChartBar } from "react-icons/fa";
@@ -22,7 +26,7 @@ export default function Hero() {
                 <BentoTile className="lg:col-span-2 lg:row-span-2 md:col-span-2 min-h-[80px]">
                     <div className="flex flex-col items-center justify-center h-full text-center">
                         <Image
-                            src="/images/my-Setup3.jpg"
+                            src={mySetup3}
                             alt="My Setup"
                             fill
                             className="object-cover"
@@ -65,7 +69,7 @@ export default function Hero() {
                 <BentoTile href="#projects" className="lg:col-span-2 lg:row-span-2 md:col-span-2 md:row-span-1 min-h-[100px] relative group">
                     <div className="flex items-center justify-center overflow-hidden">
                         <Image
-                            src="/images/projects.jpg"
+                            src={projects}
                             alt="Ariff"
                             fill
                             className="object-cover"
@@ -97,7 +101,7 @@ export default function Hero() {
                         {/* Use Next/Image here. For demo, we use a placeholder or assume file exists. Using a generic avatar for now. */}
                         <div className="w-full h-full relative">
                             <Image
-                                src="/images/heroImage6.jpg"
+                                src={heroImage6}
                                 alt="Ariff"
                                 fill
                                 className="object-cover"
@@ -123,7 +127,7 @@ export default function Hero() {
                         </div>
 
                         <div className="flex flex-wrap gap-4">
-                            <Link href="/resume.pdf" className="flex items-center gap-2 px-5 py-2.5 bg-primary hover:bg-blue-600 text-white rounded-full font-medium transition-colors shadow-lg shadow-primary/25">
+                            <Link href="/public/CV-Resume-Ariff Azahari.pdf" download className="flex items-center gap-2 px-5 py-2.5 bg-primary hover:bg-blue-600 text-white rounded-full font-medium transition-colors shadow-lg shadow-primary/25">
                                 <FaDownload /> Resume
                             </Link>
                             <Link href="#about" className="flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-full font-medium transition-colors border border-white/5">
@@ -176,7 +180,7 @@ export default function Hero() {
                 <BentoTile className="lg:col-span-3 lg:row-span-2 md:col-span-1 min-h-[100px] relative group">
                     <div className="flex items-center justify-center overflow-hidden">
                         <Image
-                            src="/images/machine-learning1.jpg"
+                            src={machineLearning2}
                             alt="Machine Learning"
                             fill
                             className="object-cover"
