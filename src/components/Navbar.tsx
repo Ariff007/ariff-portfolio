@@ -38,19 +38,16 @@ export default function Navbar() {
             }).filter(section => section.element !== null);
 
             // Find which section is currently in view
-            const scrollPosition = window.scrollY + 100; // Offset for navbar height
+            // Use reverse order: the last section whose top is at/above scroll position wins
+            const scrollPosition = window.scrollY + 80; // Offset for navbar height
 
             let currentSection = "home";
 
-            for (const section of sections) {
-                if (section.element) {
-                    const sectionTop = section.element.offsetTop;
-                    const sectionHeight = section.element.offsetHeight;
-
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                        currentSection = section.id;
-                        break;
-                    }
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const section = sections[i];
+                if (section.element && scrollPosition >= section.element.offsetTop) {
+                    currentSection = section.id;
+                    break;
                 }
             }
 

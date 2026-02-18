@@ -52,15 +52,25 @@ export default function Values() {
 
                         {/* Card — sits on top of the glow */}
                         <div
-                            className="relative p-6 rounded-2xl bg-card border border-white/5 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]"
+                            className="relative p-6 rounded-2xl bg-card border border-white/5 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] overflow-hidden"
                             style={{ zIndex: 1 }}
                         >
+                            {/* Gradient border ring on hover */}
+                            <div
+                                className="absolute inset-[-1px] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                                style={{
+                                    background: "linear-gradient(135deg, #86efac, #93c5fd)",
+                                    zIndex: 0,
+                                }}
+                            />
+                            <div className="absolute inset-[1px] rounded-[14px] bg-card pointer-events-none" style={{ zIndex: 1 }} />
+
                             {/* Icon — no transition */}
-                            <div>
+                            <div className="relative" style={{ zIndex: 2 }}>
                                 {getIcon(value.icon)}
                             </div>
-                            <h3 className="text-xl font-bold mb-2">{value.title}</h3>
-                            <p className="text-gray-400 text-sm leading-relaxed">{value.description}</p>
+                            <h3 className="relative text-xl font-bold mb-2" style={{ zIndex: 2 }}>{value.title}</h3>
+                            <p className="relative text-gray-400 text-sm leading-relaxed" style={{ zIndex: 2 }}>{value.description}</p>
                         </div>
                     </motion.div>
                 ))}
