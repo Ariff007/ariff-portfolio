@@ -26,7 +26,7 @@ export default function Hero() {
                 <BentoTile className="lg:col-span-2 lg:row-span-2 md:col-span-2 min-h-[80px]">
                     <div className="flex flex-col items-center justify-center h-full text-center">
                         <Image
-                            src={mySetup3}
+                            src="ariff-portfolio/public/images/mySetup3.jpg"
                             alt="My Setup"
                             fill
                             className="object-cover"
@@ -69,7 +69,7 @@ export default function Hero() {
                 <BentoTile href="#projects" className="lg:col-span-2 lg:row-span-2 md:col-span-2 md:row-span-1 min-h-[100px] relative group">
                     <div className="flex items-center justify-center overflow-hidden">
                         <Image
-                            src={projects}
+                            src="../public/images/projects.jpg"
                             alt="Ariff"
                             fill
                             className="object-cover"
