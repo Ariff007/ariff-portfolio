@@ -29,9 +29,21 @@ export default function BentoTile({ className, children, backgroundImage, onClic
                 className
             )}
         >
+            {/* Gradient border ring — visible on hover */}
+            {/*<div
+                className="absolute inset-[-1px] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                style={{
+                    background: "linear-gradient(135deg, #86efac, #93c5fd)",
+                    zIndex: 0,
+                }}
+            />*/}
+
+            {/* Inner card fill to mask gradient except border edge */}
+            {/*<div className="absolute inset-[1px] rounded-[14px] bg-card z-[1] pointer-events-none" />*/}
+
             {/* Background Image/Gradient Layer */}
             <div
-                className="absolute inset-0 z-0 transition-transform duration-500 group-hover:scale-110"
+                className="absolute inset-0 z-[2] transition-transform duration-500 group-hover:scale-110"
                 style={{
                     backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
                     backgroundSize: 'cover',
@@ -43,12 +55,12 @@ export default function BentoTile({ className, children, backgroundImage, onClic
             </div>
 
             {/* Content Layer */}
-            <div className="relative z-10 h-full w-full p-6 flex flex-col">
+            <div className="relative z-[3] h-full w-full p-6 flex flex-col">
                 {children}
             </div>
 
             {/* Glow Effect */}
-            <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
-        </Component>
+            <div className="absolute inset-0 z-[2] opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
+        </Component >
     );
 }

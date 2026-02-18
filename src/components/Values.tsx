@@ -16,7 +16,7 @@ export default function Values() {
     };
 
     return (
-        <section id="values" className="max-w-7xl mx-auto px-4 py-20">
+        <section id="values" className="relative z-10 max-w-7xl mx-auto px-4 py-20 mt-8 md:mt-0">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -31,19 +31,37 @@ export default function Values() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {VALUES.map((value, index) => (
+                    /* Outer wrapper: holds glow + card, group trigger here */
                     <motion.div
                         key={index}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className="p-6 rounded-2xl bg-card border border-white/5 hover:border-white/10 hover:bg-white/5 transition-colors group"
+                        className="relative group"
                     >
-                        <div className="group-hover:scale-110 transition-transform duration-300">
-                            {getIcon(value.icon)}
+                        {/* Gradient glow shadow — sits behind the card, outside its stacking context */}
+                        <div
+                            className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none blur-xl"
+                            style={{
+                                background: "linear-gradient(135deg, #86efac, #93c5fd)",
+                                transform: "translateY(1px) scale(0.9)",
+                                zIndex: 0,
+                            }}
+                        />
+
+                        {/* Card — sits on top of the glow */}
+                        <div
+                            className="relative p-6 rounded-2xl bg-card border border-white/5 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]"
+                            style={{ zIndex: 1 }}
+                        >
+                            {/* Icon — no transition */}
+                            <div>
+                                {getIcon(value.icon)}
+                            </div>
+                            <h3 className="text-xl font-bold mb-2">{value.title}</h3>
+                            <p className="text-gray-400 text-sm leading-relaxed">{value.description}</p>
                         </div>
-                        <h3 className="text-xl font-bold mb-2">{value.title}</h3>
-                        <p className="text-gray-400 text-sm leading-relaxed">{value.description}</p>
                     </motion.div>
                 ))}
             </div>

@@ -46,7 +46,7 @@ export const PROJECTS: Project[] = [
 export const VALUES = [
     {
         title: "User-Centric Approach",
-        description: "Building interfaces that are intuitive, accessible, and delightful to use.",
+        description: "Building interfaces that are intuitive, accessible, user-friendly and delightful to use. ",
         icon: "user",
     },
     {
@@ -67,8 +67,8 @@ export const VALUES = [
 ];
 
 export const SOCIALS = [
-    { name: "GitHub", url: "https://github.com", icon: "github" },
-    { name: "LinkedIn", url: "https://linkedin.com", icon: "linkedin" },
-    { name: "Twitter", url: "https://twitter.com", icon: "twitter" },
-    { name: "Instagram", url: "https://instagram.com", icon: "instagram" },
+    { name: "GitHub", url: "https://github.com/Ariff007", icon: "github" },
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/ariff-azahari-894985165/", icon: "linkedin" },
+    { name: "Twitter", url: "https://x.com/Ariff_Azahari", icon: "twitter" },
+    { name: "Instagram", url: "https://www.instagram.com/ariff_azahari/", icon: "instagram" },
 ];

@@ -1,3 +1,120 @@
+# 🚀 Modern Developer Portfolio
+
+My personal portfolio website built with **Next.js 14 (App Router)**, **TypeScript**, and **TailwindCSS**.  
+
+Designed with scalability, accessibility, performance, and clean architecture in mind - this project showcases modern frontend engineering best practices with a bold 8x6 bento grid hero layout.
+
+---
+
+## ✨ Features
+
+### 🧩 8x6 Bento Grid Hero
+- Fully responsive CSS Grid layout
+- Modern dark theme
+- Gradient typography
+- Smooth hover animations
+- Optimized profile image using `next/image`
+
+### 💎 Values Section
+- Clean, reusable card components
+- Accessible SVG icons
+- Responsive grid layout
+- Subtle interaction effects
+
+### 🚀 Projects Section
+- Dynamic project rendering from structured data
+- Tech stack badges
+- GitHub & live demo links
+- Optimized images
+
+### 📩 Contact Section
+- Accessible contact form
+- Server Actions (Next.js best practice)
+- Form validation
+- Honeypot anti-spam protection
+- Secure input handling
+
+---
+
+## 🏗 Tech Stack
+
+- **Next.js 14 (App Router)**
+- **TypeScript**
+- **TailwindCSS**
+- **ESLint + Prettier**
+- **Next/Image Optimization**
+- **Metadata API (SEO optimized)**
+
+---
+
+## ⚡ Performance Optimized
+
+- Core Web Vitals friendly
+- Image & font optimization
+- Code splitting
+- Minimal client-side JavaScript
+- Lazy-loaded components
+
+---
+
+## ♿ Accessibility First
+
+- WCAG 2.1 AA compliant
+- Semantic HTML5 structure
+- Keyboard navigable
+- Proper heading hierarchy
+- Visible focus states
+
+---
+
+## 🔒 Security Best Practices
+
+- No unsafe HTML rendering
+- Sanitized inputs
+- XSS prevention
+- Environment variable protection
+- Clean component isolation
+
+---
+
+## 📁 Project Structure
+
+```bash
+/app
+/components
+/lib
+/public
+```
+---
+
+## 🎯 Purpose
+
+This project demonstrates:
+
+- Full-stack architectural thinking
+- Clean UI engineering
+- Modern frontend best practices
+- Performance and accessibility awareness
+
+Ideal for showcasing expertise in:
+- Frontend engineering
+- Full-stack development
+- UI architecture
+- Performance optimization
+
+---
+
+## 🌍 Live Demo
+Visit my portfolio at [ariffazahari.com](https://ariffazahari.com)
+
+---
+
+## 📜 License
+
+MIT License
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
@@ -28,9 +145,3 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
