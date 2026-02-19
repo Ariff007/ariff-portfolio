@@ -16,7 +16,7 @@ export default function Hero() {
         Desktop: 8 columns (lg:grid-cols-8)
         Row height: auto or fixed
       */}
-            <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-8 lg:grid-rows-6 md:max-h-[600px] gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-8 lg:grid-rows-6 lg:max-h-[600px] gap-4">
 
                 {/* 1. My Setup Tile (col-span-2) */}
                 <BentoTile className="lg:col-span-2 lg:row-span-2 md:col-span-2 min-h-[80px]">
@@ -76,7 +76,9 @@ export default function Hero() {
 
                 {/* 6. Blog Tile (col-span-2) */}
                 <BentoTile href="/blog" className="lg:col-span-2 lg:row-span-1 md:col-span-2 md:row-span-1 bg-black/80 flex items-center justify-center">
-                    <h3 className="absolute inset-0 flex items-center justify-center text-4xl font-bold text-white shadow-lg shadow-black/10">Blog</h3>
+                    <div className="flex justify-center">
+                        <h3 className="text-4xl font-bold text-white shadow-lg shadow-black/10">Blog</h3>
+                    </div>
                 </BentoTile>
 
                 {/* 7. Tech Stack Tile (col-span-2) */}
@@ -160,9 +162,11 @@ export default function Hero() {
                     <span className="font-bold text-xl text-white/20">+</span>
                 </BentoTile>
 
-                {/* 14. Tech Stack Tile Tile (col-span-3) */}
+                {/* 14. Contact Me Tile (col-span-3) */}
                 <BentoTile href="#contact" className="lg:col-span-3 md:col-span-2 bg-black/80 flex items-center justify-center">
-                    <h3 className="absolute inset-0 flex items-center justify-center text-4xl font-bold text-white shadow-lg shadow-black/10">Contact Me</h3>
+                    <div className="flex items-center justify-center">
+                        <h3 className="text-4xl font-bold text-white shadow-lg shadow-black/10">Contact Me</h3>
+                    </div>
                 </BentoTile>
 
                 {/* 15. NLP Tile (col-span-2) */}
@@ -173,7 +177,7 @@ export default function Hero() {
                 </BentoTile>
 
                 {/* 16. Machine Learning Tile (col-span-3) */}
-                <BentoTile className="lg:col-span-3 lg:row-span-2 md:col-span-1 min-h-[100px] relative group">
+                <BentoTile className="lg:col-span-3 lg:row-span-2 md:col-span-2 min-h-[100px] relative group">
                     <div className="flex items-center justify-center overflow-hidden">
                         <Image
                             src="/images/machineLearning3.jpg"

@@ -4,6 +4,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaPaperPlane } from "react-icons/fa";
 
+const FIRAFORM_ENDPOINT = process.env.NEXT_PUBLIC_FIRAFORM_ENDPOINT!;
+
 export default function Contact() {
     const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
@@ -11,12 +13,28 @@ export default function Contact() {
         e.preventDefault();
         setStatus("submitting");
 
-        // Simulate server action
-        setTimeout(() => {
-            setStatus("success");
-            // Reset after 3 seconds
-            setTimeout(() => setStatus("idle"), 3000);
-        }, 1500);
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+
+        try {
+            const res = await fetch(FIRAFORM_ENDPOINT, {
+                method: "POST",
+                body: formData,
+            });
+
+            if (res.ok) {
+                setStatus("success");
+                form.reset();
+                // Reset back to idle after 4 seconds
+                setTimeout(() => setStatus("idle"), 4000);
+            } else {
+                setStatus("error");
+                setTimeout(() => setStatus("idle"), 4000);
+            }
+        } catch {
+            setStatus("error");
+            setTimeout(() => setStatus("idle"), 4000);
+        }
     };
 
     return (
@@ -48,6 +66,7 @@ export default function Contact() {
                         <input
                             type="text"
                             id="name"
+                            name="name"
                             required
                             className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-gray-600"
                             placeholder="John Doe"
@@ -60,6 +79,7 @@ export default function Contact() {
                         <input
                             type="email"
                             id="email"
+                            name="email"
                             required
                             className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-gray-600"
                             placeholder="john@example.com"
@@ -73,6 +93,7 @@ export default function Contact() {
                     </label>
                     <textarea
                         id="message"
+                        name="message"
                         required
                         rows={5}
                         className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-gray-600"
@@ -80,18 +101,28 @@ export default function Contact() {
                     ></textarea>
                 </div>
 
+                {status === "error" && (
+                    <p className="text-red-400 text-sm text-center">
+                        Something went wrong. Please try again.
+                    </p>
+                )}
+
                 <button
                     type="submit"
                     disabled={status === "submitting" || status === "success"}
                     className={`w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all ${status === "success"
-                            ? "bg-green-500 text-white"
+                        ? "bg-green-500 text-white"
+                        : status === "error"
+                            ? "bg-red-500/80 text-white"
                             : "bg-primary hover:bg-blue-600 text-white shadow-lg shadow-primary/25"
                         }`}
                 >
                     {status === "submitting" ? (
                         "Sending..."
                     ) : status === "success" ? (
-                        "Message Sent!"
+                        "Message Sent! ✓"
+                    ) : status === "error" ? (
+                        "Failed — Try Again"
                     ) : (
                         <>
                             Send Message <FaPaperPlane />

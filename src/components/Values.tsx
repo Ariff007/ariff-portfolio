@@ -16,7 +16,7 @@ export default function Values() {
     };
 
     return (
-        <section id="values" className="relative z-10 max-w-7xl mx-auto px-4 py-20 mt-8 md:mt-0">
+        <section id="values" className="relative z-10 max-w-7xl mx-auto px-4 py-20 mt-8">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

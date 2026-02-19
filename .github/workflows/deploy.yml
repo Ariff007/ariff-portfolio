@@ -42,6 +42,8 @@ jobs:
       # to apply output:'export' and basePath:'/ariff-portfolio'
       - name: Build with Next.js
         run: npm run build
+        env:
+          NEXT_PUBLIC_FIRAFORM_ENDPOINT: ${{ secrets.FIRAFORM_ENDPOINT }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

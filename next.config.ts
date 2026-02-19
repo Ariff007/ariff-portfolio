@@ -8,6 +8,8 @@ const nextConfig: NextConfig = {
   ...(isGitHubActions && { output: "export" }),
   // Set basePath only in CI so assets resolve correctly on GitHub Pages
   basePath: isGitHubActions ? "/ariff-portfolio" : "",
+  // Required for GitHub Pages: generates index.html per route instead of /route.html
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },
