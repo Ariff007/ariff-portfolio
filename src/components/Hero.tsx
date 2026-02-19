@@ -81,7 +81,7 @@ export default function Hero() {
 
                 {/* 7. Tech Stack Tile (col-span-2) */}
                 <BentoTile className="lg:col-span-1 md:col-span-1 bg-black/80 flex items-center justify-center relative group">
-                    <span className="font-bold text-xl text-white/20"></span>
+                    <span className="font-bold text-xl text-white/20">+</span>
                 </BentoTile>
 
                 {/* 8. Tech Stack Tile (col-span-2) */}
@@ -157,7 +157,7 @@ export default function Hero() {
 
                 {/* 13. Tech Stack Tile (col-span-2) */}
                 <BentoTile className="lg:col-span-1 md:col-span-1 bg-black/80 flex items-center justify-center">
-                    <span className="font-bold text-xl text-white/20"></span>
+                    <span className="font-bold text-xl text-white/20">+</span>
                 </BentoTile>
 
                 {/* 14. Tech Stack Tile Tile (col-span-3) */}
@@ -187,12 +187,12 @@ export default function Hero() {
 
                 {/* 17. Tech Stack Tile (col-span-2) */}
                 <BentoTile className="lg:col-span-3 lg:row-span-1 md:col-span-1 bg-black/80 flex items-center justify-center">
-                    <span className="font-bold text-xl text-white/20"></span>
+                    <span className="font-bold text-xl text-white/20">+</span>
                 </BentoTile>
 
                 {/* 18. Tech Stack Tile (col-span-2) */}
                 <BentoTile className="lg:col-span-1 md:col-span-1 bg-black/80 flex items-center justify-center">
-                    <span className="font-bold text-xl text-white/20"></span>
+                    <span className="font-bold text-xl text-white/20">+</span>
                 </BentoTile>
             </div>
         </section>
