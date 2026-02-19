@@ -169,11 +169,9 @@ export default function Hero() {
                     </div>
                 </BentoTile>
 
-                {/* 15. NLP Tile (col-span-2) */}
+                {/* 15. Tech Stack Tile (col-span-2) */}
                 <BentoTile className="lg:col-span-1 lg:row-span-2 md:col-span-2 bg-black/80">
-                    <div className="flex flex-col items-center justify-center h-full text-center grayscale group-hover:grayscale-0 transition-all duration-300">
-                        <FaNetworkWired className="text-5xl text-blue-400 mb-3" />
-                    </div>
+                    <span className="font-bold text-xl text-white/20">+</span>
                 </BentoTile>
 
                 {/* 16. Machine Learning Tile (col-span-3) */}

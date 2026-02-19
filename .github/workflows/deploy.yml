@@ -45,6 +45,11 @@ jobs:
         env:
           NEXT_PUBLIC_FIRAFORM_ENDPOINT: ${{ secrets.FIRAFORM_ENDPOINT }}
 
+      # Critical: GitHub Pages uses Jekyll which ignores _next/ (starts with _)
+      # .nojekyll tells it to skip Jekyll processing entirely
+      - name: Add .nojekyll
+        run: touch out/.nojekyll
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
