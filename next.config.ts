@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-// GitHub Actions automatically sets GITHUB_ACTIONS=true in the CI environment
+// GitHub Actions automatically sets GITHUB_ACTIONS=true in the CI environment.
 const isGitHubActions = process.env.GITHUB_ACTIONS === "true";
 
 const nextConfig: NextConfig = {
