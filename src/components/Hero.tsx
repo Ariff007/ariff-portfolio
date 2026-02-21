@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import BentoTile from "./BentoGrid";
 import { FaGithub, FaLinkedin, FaTwitter, FaDownload, FaInfoCircle, FaBrain, FaNetworkWired, FaDesktop, FaBlog, FaProjectDiagram, FaHtml5, FaCss3, FaPython, FaReact, FaChartBar } from "react-icons/fa";
-import { SiTensorflow, SiNextdotjs, SiTailwindcss } from "react-icons/si";
+import { SiTensorflow, SiNextdotjs, SiTailwindcss, SiScikitlearn, SiScipy, SiKeras } from "react-icons/si";
 
 export default function Hero() {
     return (
@@ -55,7 +55,7 @@ export default function Hero() {
                 </BentoTile>
 
                 {/* 4. Tech Stack Tile (col-span-2) */}
-                <BentoTile className="lg:col-span-1 md:col-span-1 bg-black/80 flex items-center justify-center">
+                <BentoTile className="lg:col-span-1 md:col-span-2 bg-black/80 flex items-center justify-center">
                     <div className="flex flex-row items-center justify-center h-full">
                         <SiTailwindcss className="text-4xl text-cyan-400 grayscale group-hover:grayscale-0 transition-all duration-300" />
                     </div>
@@ -158,8 +158,10 @@ export default function Hero() {
                 </BentoTile>
 
                 {/* 13. Tech Stack Tile (col-span-2) */}
-                <BentoTile className="lg:col-span-1 md:col-span-1 bg-black/80 flex items-center justify-center">
-                    <span className="font-bold text-xl text-white/20">+</span>
+                <BentoTile className="lg:col-span-1 md:col-span-2 bg-black/80 flex items-center justify-center">
+                    <div className="flex flex-row items-center justify-center h-full">
+                        <SiKeras className="text-5xl text-red-800 grayscale group-hover:grayscale-0 transition-all duration-300" />
+                    </div>
                 </BentoTile>
 
                 {/* 14. Contact Me Tile (col-span-3) */}
@@ -194,7 +196,9 @@ export default function Hero() {
 
                 {/* 18. Tech Stack Tile (col-span-2) */}
                 <BentoTile className="lg:col-span-1 md:col-span-1 bg-black/80 flex items-center justify-center">
-                    <span className="font-bold text-xl text-white/20">+</span>
+                    <div className="flex flex-row items-center justify-center h-full">
+                        <SiScipy className="text-5xl text-blue-900 grayscale group-hover:grayscale-0 transition-all duration-300" />
+                    </div>
                 </BentoTile>
             </div>
         </section>

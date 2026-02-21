@@ -1,6 +1,6 @@
 export const SITE_CONFIG = {
     name: "Ariff Azahari",
-    title: "Ariff Azahari - Personal Portfolio",
+    title: "Home - Ariff Azahari",
     description: "Data scientist with expertise in machine learning, NLP, analytics, and scalable web systems. Turning complex data into impactful solutions. Building scalable, data-driven solutions and intelligent systems.",
     url: "https://ariffazahari.com",
     ogImage: "https://ariffazahari.com/og.jpg",

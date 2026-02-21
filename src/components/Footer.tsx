@@ -2,6 +2,7 @@ import { SITE_CONFIG } from "@/lib/constants";
 import { SOCIALS } from "@/lib/data";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -10,7 +11,7 @@ export default function Footer() {
         switch (name) {
             case "GitHub": return <FaGithub />;
             case "LinkedIn": return <FaLinkedin />;
-            case "Twitter": return <FaTwitter />;
+            case "Twitter": return <FaXTwitter />;
             case "Instagram": return <FaInstagram />;
             default: return null;
         }

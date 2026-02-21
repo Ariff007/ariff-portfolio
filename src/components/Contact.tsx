@@ -69,7 +69,7 @@ export default function Contact() {
                             name="name"
                             required
                             className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-gray-600"
-                            placeholder="John Doe"
+                            placeholder="Ariff Azahari"
                         />
                     </div>
                     <div>
@@ -82,7 +82,7 @@ export default function Contact() {
                             name="email"
                             required
                             className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-gray-600"
-                            placeholder="john@example.com"
+                            placeholder="ariff@example.com"
                         />
                     </div>
                 </div>
@@ -97,7 +97,7 @@ export default function Contact() {
                         required
                         rows={5}
                         className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-gray-600"
-                        placeholder="Tell me about your project..."
+                        placeholder="Tell me about your project or just say hi..."
                     ></textarea>
                 </div>
 
