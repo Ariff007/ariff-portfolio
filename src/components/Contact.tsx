@@ -4,13 +4,20 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaPaperPlane } from "react-icons/fa";
 
-const FIRAFORM_ENDPOINT = process.env.NEXT_PUBLIC_FIRAFORM_ENDPOINT!;
+const FIRAFORM_ENDPOINT = process.env.NEXT_PUBLIC_FIRAFORM_ENDPOINT ?? "";
 
 export default function Contact() {
     const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        if (!FIRAFORM_ENDPOINT) {
+            setStatus("error");
+            setTimeout(() => setStatus("idle"), 4000);
+            return;
+        }
+
         setStatus("submitting");
 
         const form = e.currentTarget;
@@ -20,9 +27,18 @@ export default function Contact() {
             const res = await fetch(FIRAFORM_ENDPOINT, {
                 method: "POST",
                 body: formData,
+                // Many form services (e.g. Firaform) respond with a 3xx redirect
+                // on success. With the default "follow" mode, fetch follows the
+                // redirect but the final response may not be `res.ok`.
+                // "manual" captures the redirect itself so we can detect success.
+                redirect: "manual",
             });
 
-            if (res.ok) {
+            // res.type === "opaqueredirect"  →  the service redirected (success)
+            // res.ok (2xx)                   →  the service replied directly
+            const succeeded = res.type === "opaqueredirect" || res.ok;
+
+            if (succeeded) {
                 setStatus("success");
                 form.reset();
                 // Reset back to idle after 4 seconds

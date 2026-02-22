@@ -119,8 +119,8 @@ export default function Hero() {
                             <h1 className="text-5xl md:text-5xl font-bold mb-2">
                                 Hi, I’m <span className="text-gradient-hero">Ariff</span>
                             </h1>
-                            <h2 className="text-md md:text-sm text-gray-400 mb-6 max-w-lg">
-                                Data Scientist, Full-stack Developer, Cybersecurity Enthusiast.
+                            <h2 className="text-md md:text-md text-gray-400 mb-6 max-w-lg">
+                                Passionate data scientist & cybersecurity enthusiast.
                             </h2>
                         </div>
 
