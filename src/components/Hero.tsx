@@ -122,9 +122,18 @@ export default function Hero() {
                     <BentoTile className="lg:col-span-4 lg:row-span-2 md:col-span-4 md:row-span-2 min-h-[192px] flex flex-col justify-center bg-gradient-to-br from-[#000005] to-[#0d1120] border-gradient-hero">
                         <div className="flex flex-col h-full justify-between">
                             <div>
-                                <h1 className="text-5xl md:text-5xl font-bold mb-2">
-                                    Hi, I'm <span className="text-gradient-hero">Ariff</span>
-                                </h1>
+                                <div className="flex flex-wrap items-center gap-3 mb-2">
+                                    <h1 className="text-5xl md:text-5xl font-bold">
+                                        Hi, I'm <span className="text-gradient-hero">Ariff</span>
+                                    </h1>
+                                    <span className="flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-green-500/15 text-green-400 border border-green-500/30 self-center">
+                                        <span className="relative flex h-2 w-2">
+                                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                                            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
+                                        </span>
+                                        Open to work
+                                    </span>
+                                </div>
                                 <h2 className="text-md md:text-md text-gray-400 mb-6 max-w-lg">
                                     Passionate data scientist &amp; cybersecurity enthusiast.
                                 </h2>

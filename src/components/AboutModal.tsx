@@ -320,10 +320,12 @@ export default function AboutModal({ open, onClose, triggerRef }: AboutModalProp
                             md:inset-6
                             lg:inset-8
                             flex flex-col lg:flex-row
-                            rounded-3xl overflow-hidden
+                            rounded-3xl
                             bg-card border border-white/10
                             shadow-2xl shadow-black/60
+                            overflow-y-auto lg:overflow-visible
                         "
+                        style={{ scrollbarWidth: "thin", scrollbarColor: "rgba(255,255,255,0.1) transparent" }}
                         // Prevent backdrop click from bubbling through the panel
                         onClick={(e) => e.stopPropagation()}
                     >
@@ -349,12 +351,13 @@ export default function AboutModal({ open, onClose, triggerRef }: AboutModalProp
                             w-full lg:w-[38%] xl:w-[35%]
                             p-5 flex-shrink-0
                             border-b lg:border-b-0 lg:border-r border-white/10
+                            min-h-[85vh]
                         ">
                             <HeroCard />
                         </div>
 
                         {/* ── RIGHT — Biography ────────────────────────── */}
-                        <div className="flex-1 min-h-0 overflow-hidden p-6 lg:p-8">
+                        <div className="flex-1 lg:min-h-0 lg:overflow-hidden p-6 lg:p-8">
                             <BiographyPanel />
                         </div>
                     </motion.div>
