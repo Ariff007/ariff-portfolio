@@ -84,7 +84,7 @@ export default function Contact() {
                             id="name"
                             name="name"
                             required
-                            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-gray-600"
+                            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary/10 outline-none transition-all placeholder:text-gray-600"
                             placeholder="Ariff Azahari"
                         />
                     </div>
@@ -97,7 +97,7 @@ export default function Contact() {
                             id="email"
                             name="email"
                             required
-                            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-gray-600"
+                            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary/10 outline-none transition-all placeholder:text-gray-600"
                             placeholder="ariff@example.com"
                         />
                     </div>
@@ -112,7 +112,7 @@ export default function Contact() {
                         name="message"
                         required
                         rows={5}
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-gray-600"
+                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary/10 outline-none transition-all placeholder:text-gray-600"
                         placeholder="Tell me about your project or just say hi..."
                     ></textarea>
                 </div>
