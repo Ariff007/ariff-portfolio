@@ -42,7 +42,7 @@ export default function Hero() {
                     <BentoTile className="lg:col-span-2 lg:row-span-2 md:col-span-2 min-h-[80px]">
                         <div className="flex flex-col items-center justify-center h-full text-center">
                             <Image
-                                src="/images/mySetup3.jpg"
+                                src="/images/mySetup4.png"
                                 alt="My Setup"
                                 fill
                                 className="object-cover"
@@ -79,7 +79,7 @@ export default function Hero() {
                     {/* 5. Projects Tile */}
                     <BentoTile href="#projects" className="lg:col-span-2 lg:row-span-2 md:col-span-2 md:row-span-1 min-h-[100px] relative group">
                         <div className="flex items-center justify-center overflow-hidden">
-                            <Image src="/images/projects.jpg" alt="Projects" fill className="object-cover" />
+                            <Image src="/images/projects2.png" alt="Projects" fill className="object-cover" />
                             <h3 className="absolute inset-0 flex items-center justify-center text-4xl font-bold text-white shadow-lg shadow-black/10">
                                 Projects
                             </h3>
