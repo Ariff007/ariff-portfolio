@@ -36,7 +36,7 @@ export default function Hero() {
           Tablet:  4 columns (md:grid-cols-4)
           Desktop: 8 columns (lg:grid-cols-8)
         */}
-                <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-8 lg:grid-rows-6 lg:max-h-[600px] gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-8 lg:grid-rows-6 lg:max-h-[600px] gap-3">
 
                     {/* 1. My Setup Tile */}
                     <BentoTile className="lg:col-span-2 lg:row-span-2 md:col-span-2 min-h-[80px]">

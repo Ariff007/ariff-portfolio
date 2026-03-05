@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         creator: "@ariff",
     },
     icons: {
-        icon: "/favicon.ico",
+        icon: "/images/logo2-circle.png",
     },
 };
 
