@@ -53,10 +53,10 @@ export default function RootLayout({
         <html lang="en" className="scroll-smooth">
             <body className={`${inter.className} bg-background text-foreground relative min-h-screen selection:bg-primary/30 selection:text-primary`}>
                 {/* Background Gradients */}
-                <div className="fixed inset-0 z-[-1] pointer-events-none">
+                {/*<div className="fixed inset-0 z-[-1] pointer-events-none">
                     <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl opacity-30 mix-blend-screen animate-pulse"></div>
                     <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl opacity-30 mix-blend-screen"></div>
-                </div>
+                </div>*/}
 
                 <Navbar />
                 <main className="flex min-h-screen flex-col items-center justify-between">

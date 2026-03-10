@@ -162,7 +162,7 @@ function BiographyPanel() {
                 <SectionHeader icon={<FaBriefcase size={14} />} title="Experience" />
                 <div id="experience-heading" className="relative space-y-0">
                     {/* vertical timeline line */}
-                    <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-blue-900 to-transparent" aria-hidden="true" />
+                    <div className="absolute left-4 top-0 bottom-0 w-px bg-blue-800/80" aria-hidden="true" />
 
                     {aboutData.experience.map((exp, i) => (
                         <div key={i} className="relative pl-12 pb-10 last:pb-0">
@@ -335,7 +335,7 @@ export default function AboutModal({ open, onClose, triggerRef }: AboutModalProp
                             onClick={handleClose}
                             aria-label="Close About panel"
                             className="
-                                absolute top-4 right-4 z-10
+                                fixed lg:absolute top-4 right-4 z-[110]
                                 p-2.5 rounded-full
                                 bg-white/5 hover:bg-white/15
                                 text-gray-400 hover:text-white

@@ -10,7 +10,6 @@ import {
     FaLinkedin,
     FaDownload,
     FaInfoCircle,
-    FaPython,
     FaHtml5,
     FaCss3,
     FaReact,
@@ -38,73 +37,16 @@ export default function Hero() {
         */}
                 <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-8 lg:grid-rows-6 lg:max-h-[600px] gap-3">
 
-                    {/* 1. My Setup Tile */}
-                    <BentoTile className="lg:col-span-2 lg:row-span-2 md:col-span-2 min-h-[80px]">
-                        <div className="flex flex-col items-center justify-center h-full text-center">
-                            <Image
-                                src="/images/mySetup4.png"
-                                alt="My Setup"
-                                fill
-                                className="object-cover"
-                            />
-                            <h3 className="absolute inset-0 flex items-center justify-center text-4xl font-bold text-white shadow-lg shadow-black/10">
-                                My Setup
-                            </h3>
-                        </div>
-                    </BentoTile>
-
                     {/* 2. Tech icons — Python + TensorFlow */}
-                    <BentoTile className="lg:col-span-2 lg:row-span-1 md:col-span-2 bg-black/80">
+                    {/*<BentoTile className="lg:col-span-2 lg:row-span-1 md:col-span-2 bg-black/80">
                         <div className="flex flex-row items-center justify-center h-full space-x-14">
                             <FaPython className="text-5xl text-blue-500 grayscale group-hover:grayscale-0 transition-all duration-300" />
                             <SiTensorflow className="text-5xl text-yellow-500 grayscale group-hover:grayscale-0 transition-all duration-300" />
                         </div>
-                    </BentoTile>
+                    </BentoTile>*/}
 
-                    {/* 3. HTML + CSS */}
-                    <BentoTile className="lg:col-span-1 lg:row-span-2 md:col-span-2 md:row-span-2 bg-black/80">
-                        <div className="flex flex-col items-center justify-between h-full text-center">
-                            <FaHtml5 className="text-5xl text-orange-500 grayscale group-hover:grayscale-0 transition-all duration-300" />
-                            <FaCss3 className="text-5xl text-blue-500 grayscale group-hover:grayscale-0 transition-all duration-300" />
-                        </div>
-                    </BentoTile>
-
-                    {/* 4. Tailwind */}
-                    <BentoTile className="lg:col-span-1 md:col-span-2 bg-black/80 flex items-center justify-center">
-                        <div className="flex flex-row items-center justify-center h-full">
-                            <SiTailwindcss className="text-4xl text-cyan-400 grayscale group-hover:grayscale-0 transition-all duration-300" />
-                        </div>
-                    </BentoTile>
-
-                    {/* 5. Projects Tile */}
-                    <BentoTile href="#projects" className="lg:col-span-2 lg:row-span-2 md:col-span-2 md:row-span-1 min-h-[100px] relative group">
-                        <div className="flex items-center justify-center overflow-hidden">
-                            <Image src="/images/projects2.png" alt="Projects" fill className="object-cover" />
-                            <h3 className="absolute inset-0 flex items-center justify-center text-4xl font-bold text-white shadow-lg shadow-black/10">
-                                Projects
-                            </h3>
-                        </div>
-                    </BentoTile>
-
-                    {/* 6. Blog Tile */}
-                    <BentoTile href="/blog" className="lg:col-span-2 lg:row-span-1 md:col-span-2 md:row-span-1 bg-black/80 flex items-center justify-center">
-                        <div className="flex justify-center">
-                            <h3 className="text-4xl font-bold text-white shadow-lg shadow-black/10">Blog</h3>
-                        </div>
-                    </BentoTile>
-
-                    {/* 7. Placeholder */}
-                    <BentoTile className="lg:col-span-1 md:col-span-1 bg-black/80 flex items-center justify-center relative group">
-                        <span className="font-bold text-xl text-white/20">+</span>
-                    </BentoTile>
-
-                    {/* 8. Placeholder */}
-                    <BentoTile className="lg:col-span-1 lg:row-span-2 md:col-span-1 md:row-span-1 bg-black/80 flex items-center justify-center">
-                        <span className="font-bold text-xl text-white/20">+</span>
-                    </BentoTile>
-
-                    {/* 9. Profile Image Tile — layoutId for shared-layout morph */}
-                    <BentoTile className="lg:col-span-2 lg:row-span-2 md:col-span-4 md:row-span-2 min-h-[192px] relative group">
+                    {/* 1. Profile Image Tile — layoutId for shared-layout morph */}
+                    <BentoTile className="lg:col-span-2 lg:row-span-4 md:col-span-1 md:row-span-2 min-h-[192px] relative group">
                         <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
                             <div className="w-full h-full relative">
                                 <Image
@@ -118,8 +60,8 @@ export default function Hero() {
                         </div>
                     </BentoTile>
 
-                    {/* 10. Introduction Tile — About Me button here */}
-                    <BentoTile className="lg:col-span-4 lg:row-span-2 md:col-span-4 md:row-span-2 min-h-[192px] flex flex-col justify-center bg-gradient-to-br from-[#000005] to-[#0d1120] border-gradient-hero">
+                    {/* 2. Introduction Tile — About Me button here */}
+                    <BentoTile className="lg:col-span-3 lg:row-span-3 md:col-span-3 md:row-span-2 min-h-[192px] flex flex-col justify-center bg-gradient-to-br from-[#000005] to-[#0d1120] border-gradient-hero">
                         <div className="flex flex-col h-full justify-between">
                             <div>
                                 <div className="flex flex-wrap items-center gap-3 mb-2">
@@ -181,40 +123,76 @@ export default function Hero() {
                         </div>
                     </BentoTile>
 
-                    {/* 11. React */}
-                    <BentoTile className="lg:col-span-1 md:col-span-1 bg-black/80">
+                    {/* 3. Tailwind */}
+                    <BentoTile className="lg:col-span-1 md:col-span-2 bg-black/80 flex items-center justify-center">
                         <div className="flex flex-row items-center justify-center h-full">
-                            <FaReact className="text-5xl text-blue-400 grayscale group-hover:grayscale-0 transition-all duration-300" />
+                            <SiTailwindcss className="text-4xl text-cyan-400 grayscale group-hover:grayscale-0 transition-all duration-300" />
                         </div>
                     </BentoTile>
 
-                    {/* 12. Next.js */}
-                    <BentoTile className="lg:col-span-1 md:col-span-1 bg-black/80 flex items-center justify-center">
+                    {/* 4. Projects Tile */}
+                    <BentoTile href="#projects" className="lg:col-span-2 lg:row-span-2 md:col-span-2 md:row-span-1 min-h-[100px] relative group">
+                        <div className="flex items-center justify-center overflow-hidden">
+                            <Image src="/images/projects2.png" alt="Projects" fill className="object-cover" />
+                            <h3 className="absolute inset-0 flex items-center justify-center text-4xl font-bold text-white shadow-lg shadow-black/10">
+                                Projects
+                            </h3>
+                        </div>
+                    </BentoTile>
+
+                    {/* 6. Blog Tile */}
+                    {/*<BentoTile href="/blog" className="lg:col-span-2 lg:row-span-1 md:col-span-2 md:row-span-1 bg-black/80 flex items-center justify-center">
+                        <div className="flex justify-center">
+                            <h3 className="text-4xl font-bold text-white shadow-lg shadow-black/10">Blog</h3>
+                        </div>
+                    </BentoTile>*/}
+
+                    {/* 5. Tensorflow */}
+                    <BentoTile className="lg:col-span-1 md:col-span-1 bg-black/80">
                         <div className="flex flex-row items-center justify-center h-full">
+                            <SiTensorflow className="text-5xl text-yellow-500 grayscale group-hover:grayscale-0 transition-all duration-300" />
+                        </div>
+                    </BentoTile>
+
+                    {/* 6. Placeholder */}
+                    <BentoTile className="lg:col-span-2 lg:row-span-2 md:col-span-1 bg-black/80 flex items-center justify-center">
+                        <span className="font-bold text-xl text-white/20">+</span>
+                    </BentoTile>
+
+                    {/* 7. React + Nextjs */}
+                    <BentoTile className="lg:col-span-1 lg:row-span-2 md:col-span-2 bg-black/80 flex items-center justify-center">
+                        <div className="flex flex-col items-center justify-between h-full text-center">
+                            <FaReact className="text-5xl text-blue-400 grayscale group-hover:grayscale-0 transition-all duration-300" />
                             <SiNextdotjs className="text-5xl text-white grayscale group-hover:grayscale-0 transition-all duration-300" />
                         </div>
                     </BentoTile>
 
-                    {/* 13. Keras */}
-                    <BentoTile className="lg:col-span-1 md:col-span-2 bg-black/80 flex items-center justify-center">
-                        <div className="flex flex-row items-center justify-center h-full">
-                            <SiKeras className="text-5xl text-red-800 grayscale group-hover:grayscale-0 transition-all duration-300" />
+                    {/* 8. HTML + CSS */}
+                    <BentoTile className="lg:col-span-1 lg:row-span-2 md:col-span-2 bg-black/80">
+                        <div className="flex flex-col items-center justify-between h-full text-center">
+                            <FaHtml5 className="text-5xl text-orange-500 grayscale group-hover:grayscale-0 transition-all duration-300" />
+                            <FaCss3 className="text-5xl text-blue-500 grayscale group-hover:grayscale-0 transition-all duration-300" />
                         </div>
                     </BentoTile>
 
-                    {/* 14. Contact Me */}
-                    <BentoTile href="#contact" className="lg:col-span-3 md:col-span-2 bg-black/80 flex items-center justify-center">
+                    {/* 9. Placeholder */}
+                    <BentoTile className="lg:col-span-2 lg:row-span-2 md:col-span-2 bg-black/80">
+                        <span className="font-bold text-xl text-white/20">+</span>
+                    </BentoTile>
+
+                    {/* n. Optional Placeholder */}
+                    {/*<BentoTile className="lg:col-span-2 lg:row-span-1 md:col-span-1 bg-black/80 flex items-center justify-center">
+                        <span className="font-bold text-xl text-white/20">+</span>
+                    </BentoTile>*/}
+
+                    {/* 10. Contact Me */}
+                    <BentoTile href="#contact" className="lg:col-span-2 md:col-span-2 bg-black/80 flex items-center justify-center">
                         <div className="flex items-center justify-center">
                             <h3 className="text-4xl font-bold text-white shadow-lg shadow-black/10">Contact Me</h3>
                         </div>
                     </BentoTile>
 
-                    {/* 15. Placeholder */}
-                    <BentoTile className="lg:col-span-1 lg:row-span-2 md:col-span-2 bg-black/80">
-                        <span className="font-bold text-xl text-white/20">+</span>
-                    </BentoTile>
-
-                    {/* 16. Machine Learning Tile */}
+                    {/* 11. Machine Learning Tile */}
                     <BentoTile className="lg:col-span-3 lg:row-span-2 md:col-span-2 min-h-[100px] relative group">
                         <div className="flex items-center justify-center overflow-hidden">
                             <Image src="/images/machineLearning3.jpg" alt="Machine Learning" fill className="object-cover" />
@@ -224,16 +202,23 @@ export default function Hero() {
                         </div>
                     </BentoTile>
 
-                    {/* 17. Placeholder */}
-                    <BentoTile className="lg:col-span-3 lg:row-span-1 md:col-span-1 bg-black/80 flex items-center justify-center">
-                        <span className="font-bold text-xl text-white/20">+</span>
+                    {/* 12. Keras */}
+                    <BentoTile className="lg:col-span-1 md:col-span-2 bg-black/80">
+                        <div className="flex flex-row items-center justify-center h-full">
+                            <SiKeras className="text-5xl text-red-600 grayscale group-hover:grayscale-0 transition-all duration-300" />
+                        </div>
                     </BentoTile>
 
-                    {/* 18. SciPy */}
+                    {/* 13. SciPy */}
                     <BentoTile className="lg:col-span-1 md:col-span-1 bg-black/80 flex items-center justify-center">
                         <div className="flex flex-row items-center justify-center h-full">
                             <SiScipy className="text-5xl text-blue-900 grayscale group-hover:grayscale-0 transition-all duration-300" />
                         </div>
+                    </BentoTile>
+
+                    {/* 14. Placeholder */}
+                    <BentoTile className="lg:col-span-3 md:col-span-1 bg-black/80">
+                        <span className="font-bold text-xl text-white/20">+</span>
                     </BentoTile>
                 </div>
             </section>

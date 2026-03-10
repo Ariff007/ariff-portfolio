@@ -26,6 +26,12 @@ export default function Navbar() {
     const [isVisible, setIsVisible] = useState(false);
     const pathname = usePathname();
 
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        e.preventDefault();
+        const id = href.replace('#', '');
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    };
+
     useEffect(() => {
         const handleScroll = () => {
             // Get all sections
@@ -82,7 +88,7 @@ export default function Navbar() {
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
                     <div className="flex-shrink-0">
-                        <Link href="/#home" className="font-bold text-xl text-gradient">
+                        <Link href="/#home" onClick={(e) => handleNavClick(e, '#home')} className="font-bold text-xl text-gradient">
                             {SITE_CONFIG.name}
                         </Link>
                     </div>
@@ -98,6 +104,7 @@ export default function Navbar() {
                                     <Link
                                         key={item.name}
                                         href={item.href}
+                                        onClick={(e) => handleNavClick(e, item.href)}
                                         className={cn(
                                             "px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200",
                                             isActive
@@ -146,7 +153,7 @@ export default function Navbar() {
                                     <Link
                                         key={item.name}
                                         href={item.href}
-                                        onClick={() => setIsOpen(false)}
+                                        onClick={(e) => { handleNavClick(e, item.href); setIsOpen(false); }}
                                         className={cn(
                                             "block px-3 py-2 rounded-md text-base font-medium transition-colors",
                                             isActive
