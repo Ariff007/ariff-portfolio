@@ -39,10 +39,23 @@
   --font-google-sans: "Google Sans", sans-serif;
 }
 
+/* ── Light-mode colour overrides ── */
+:root[data-theme="light"] {
+  --color-background: #f6f8fa;
+  --color-foreground: #1f2328;
+  --color-card:       #ffffff;
+  --color-card-hover: #eaeef2;
+  --color-primary:    #1f6feb;
+  --color-secondary:  #57606a;
+  --color-accent:     #0969da;
+  --color-border:     rgba(31, 35, 40, 0.15);
+}
+
 @layer base {
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 

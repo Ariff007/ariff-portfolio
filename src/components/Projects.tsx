@@ -61,6 +61,7 @@ export default function Projects() {
                             <div className="relative h-48 w-full bg-gray-800 overflow-hidden" style={{ zIndex: 2 }}>
                                 <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-700 to-gray-900 text-gray-500 group-hover:scale-105 transition-transform duration-500">
                                     <span className="text-4xl">💻</span>
+                                    {/*<Image src={project.image} alt={project.title} fill className="object-contain" />*/}
                                 </div>
                             </div>
 

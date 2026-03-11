@@ -4,6 +4,7 @@ import "./globals.css";
 import { SITE_CONFIG } from "@/lib/constants";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ThemeProvider } from "@/components/ThemeContext";
 
 // Using Inter as a close alternative to Google Sans/Product Sans for open source
 // Or we can try to find a similar variable font. Inter is standard and clean.
@@ -52,17 +53,19 @@ export default function RootLayout({
     return (
         <html lang="en" className="scroll-smooth">
             <body className={`${inter.className} bg-background text-foreground relative min-h-screen selection:bg-primary/30 selection:text-primary`}>
-                {/* Background Gradients */}
-                {/*<div className="fixed inset-0 z-[-1] pointer-events-none">
-                    <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl opacity-30 mix-blend-screen animate-pulse"></div>
-                    <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl opacity-30 mix-blend-screen"></div>
-                </div>*/}
+                <ThemeProvider>
+                    {/* Background Gradients */}
+                    {/*<div className="fixed inset-0 z-[-1] pointer-events-none">
+                        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl opacity-30 mix-blend-screen animate-pulse"></div>
+                        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl opacity-30 mix-blend-screen"></div>
+                    </div>*/}
 
-                <Navbar />
-                <main className="flex min-h-screen flex-col items-center justify-between">
-                    {children}
-                </main>
-                <Footer />
+                    <Navbar />
+                    <main className="flex min-h-screen flex-col items-center justify-between">
+                        {children}
+                    </main>
+                    <Footer />
+                </ThemeProvider>
             </body>
         </html>
     );

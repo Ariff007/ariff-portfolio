@@ -3,8 +3,10 @@
 import { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
 import BentoTile from "./BentoGrid";
 import AboutModal from "./AboutModal";
+import { useTheme } from "./ThemeContext";
 import {
     FaGithub,
     FaLinkedin,
@@ -13,6 +15,8 @@ import {
     FaHtml5,
     FaCss3,
     FaReact,
+    FaSun,
+    FaMoon,
 } from "react-icons/fa";
 import {
     SiTensorflow,
@@ -25,6 +29,7 @@ import {
 export default function Hero() {
     const [isAboutOpen, setIsAboutOpen] = useState(false);
     const aboutButtonRef = useRef<HTMLButtonElement>(null);
+    const { theme, toggleTheme } = useTheme();
 
     return (
         <>
@@ -140,7 +145,7 @@ export default function Hero() {
                         </div>
                     </BentoTile>
 
-                    {/* 6. Blog Tile */}
+                    {/* n. Blog Tile */}
                     {/*<BentoTile href="/blog" className="lg:col-span-2 lg:row-span-1 md:col-span-2 md:row-span-1 bg-black/80 flex items-center justify-center">
                         <div className="flex justify-center">
                             <h3 className="text-4xl font-bold text-white shadow-lg shadow-black/10">Blog</h3>
@@ -154,8 +159,13 @@ export default function Hero() {
                         </div>
                     </BentoTile>
 
+                    {/* n. Optional Placeholder */}
+                    {/*<BentoTile className="lg:col-span-1 md:col-span-1 bg-black/80 flex items-center justify-center">
+                        <span className="font-bold text-xl text-white/20">+</span>
+                    </BentoTile>*/}
+
                     {/* 6. Placeholder */}
-                    <BentoTile className="lg:col-span-2 lg:row-span-2 md:col-span-1 bg-black/80 flex items-center justify-center">
+                    <BentoTile className="lg:col-span-2 md:col-span-1 bg-black/80 flex items-center justify-center">
                         <span className="font-bold text-xl text-white/20">+</span>
                     </BentoTile>
 
@@ -180,19 +190,59 @@ export default function Hero() {
                         <span className="font-bold text-xl text-white/20">+</span>
                     </BentoTile>
 
-                    {/* n. Optional Placeholder */}
-                    {/*<BentoTile className="lg:col-span-2 lg:row-span-1 md:col-span-1 bg-black/80 flex items-center justify-center">
+                    {/* 10. Placeholder */}
+                    <BentoTile className="lg:col-span-1 md:col-span-1 bg-black/80 flex items-center justify-center">
                         <span className="font-bold text-xl text-white/20">+</span>
+                    </BentoTile>
+
+                    {/* 11. Theme Toggle */}
+                    {/*<BentoTile
+                        onClick={toggleTheme}
+                        className="lg:col-span-1 md:col-span-1 bg-black/80 flex items-center justify-center cursor-pointer select-none"
+                    >
+                        <div className="flex flex-col items-center justify-center gap-2 h-full w-full">
+                            <AnimatePresence mode="wait" initial={false}>
+                                {theme === "dark" ? (
+                                    <motion.div
+                                        key="moon"
+                                        initial={{ opacity: 0, rotate: -30, scale: 0.7 }}
+                                        animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                                        exit={{ opacity: 0, rotate: 30, scale: 0.7 }}
+                                        transition={{ duration: 0.25 }}
+                                    >
+                                        <FaMoon className="text-3xl text-blue-300" />
+                                    </motion.div>
+                                ) : (
+                                    <motion.div
+                                        key="sun"
+                                        initial={{ opacity: 0, rotate: 30, scale: 0.7 }}
+                                        animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                                        exit={{ opacity: 0, rotate: -30, scale: 0.7 }}
+                                        transition={{ duration: 0.25 }}
+                                    >
+                                        <FaSun className="text-3xl text-yellow-400" />
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                            <span className="text-[10px] font-semibold tracking-widest uppercase text-foreground/40">
+                                {theme === "dark" ? "Dark" : "Light"}
+                            </span>
+                        </div>
                     </BentoTile>*/}
 
-                    {/* 10. Contact Me */}
+                    {/* n. Optional Placeholder */}
+                    <BentoTile className="lg:col-span-1 md:col-span-1 bg-black/80">
+                        <span className="font-bold text-xl text-white/20">+</span>
+                    </BentoTile>
+
+                    {/* 12. Contact Me */}
                     <BentoTile href="#contact" className="lg:col-span-2 md:col-span-2 bg-black/80 flex items-center justify-center">
                         <div className="flex items-center justify-center">
                             <h3 className="text-4xl font-bold text-white shadow-lg shadow-black/10">Contact Me</h3>
                         </div>
                     </BentoTile>
 
-                    {/* 11. Machine Learning Tile */}
+                    {/* 13. Machine Learning Tile */}
                     <BentoTile className="lg:col-span-3 lg:row-span-2 md:col-span-2 min-h-[100px] relative group">
                         <div className="flex items-center justify-center overflow-hidden">
                             <Image src="/images/machineLearning3.jpg" alt="Machine Learning" fill className="object-cover" />
@@ -202,21 +252,21 @@ export default function Hero() {
                         </div>
                     </BentoTile>
 
-                    {/* 12. Keras */}
+                    {/* 14. Keras */}
                     <BentoTile className="lg:col-span-1 md:col-span-2 bg-black/80">
                         <div className="flex flex-row items-center justify-center h-full">
                             <SiKeras className="text-5xl text-red-600 grayscale group-hover:grayscale-0 transition-all duration-300" />
                         </div>
                     </BentoTile>
 
-                    {/* 13. SciPy */}
+                    {/* 15. SciPy */}
                     <BentoTile className="lg:col-span-1 md:col-span-1 bg-black/80 flex items-center justify-center">
                         <div className="flex flex-row items-center justify-center h-full">
                             <SiScipy className="text-5xl text-blue-900 grayscale group-hover:grayscale-0 transition-all duration-300" />
                         </div>
                     </BentoTile>
 
-                    {/* 14. Placeholder */}
+                    {/* 16. Placeholder */}
                     <BentoTile className="lg:col-span-3 md:col-span-1 bg-black/80">
                         <span className="font-bold text-xl text-white/20">+</span>
                     </BentoTile>

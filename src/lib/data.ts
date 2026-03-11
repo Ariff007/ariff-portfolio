@@ -18,20 +18,20 @@ export interface Value {
 
 export const PROJECTS: Project[] = [
     {
-        title: "AI-Powered Analytics",
-        description: "Real-time data analytics dashboard using Machine Learning to predict market trends.",
-        image: "/projects/analytics.png", // specific placeholder
-        tech: ["Python", "TensorFlow", "React", "AWS"],
-        github: "https://github.com/ariff/analytics",
-        demo: "https://analytics.ariff.dev",
+        title: "GHG Emission Forecasting",
+        description: "Malaysia's GHG emission forecasting using historical data and machine learning.",
+        image: "images/ghgEmission1.png", // specific placeholder
+        tech: ["Python", "Scikit-learn", "XGBoost", "Prophet"],
+        github: "https://github.com/Ariff007/ghg-emission-forecasting",
+        demo: "https://github.com/Ariff007/ghg-emission-forecasting",
     },
     {
-        title: "SecureChat",
-        description: "End-to-end encrypted messaging application ensuring user privacy and data security.",
-        image: "/projects/securechat.png",
-        tech: ["Node.js", "Socket.io", "Cryptography", "MongoDB"],
-        github: "https://github.com/ariff/securechat",
-        demo: "https://chat.ariff.dev",
+        title: "Reservoir Prediction",
+        description: "Reservoir production prediction using historical data and machine learning.",
+        image: "images/reservoir1.png",
+        tech: ["Python", "XGBoost", "Scipy", "Scikit-learn"],
+        github: "https://github.com/Ariff007/reservoir-production-prediction",
+        demo: "https://github.com/Ariff007/reservoir-production-prediction",
     },
     {
         title: "EcoTrack",

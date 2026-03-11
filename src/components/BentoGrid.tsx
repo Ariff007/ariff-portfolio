@@ -15,12 +15,24 @@ export function cn(...inputs: (string | undefined | null | false)[]) {
 }
 
 export default function BentoTile({ className, children, backgroundImage, onClick, href }: BentoTileProps) {
-    const Component = href ? motion.a : motion.div;
+    // Hash links (#section) should scroll smoothly without updating the URL.
+    // Real hrefs (external URLs or paths) keep the native anchor behaviour.
+    const isHashLink = href?.startsWith("#");
+    const Component = href && !isHashLink ? motion.a : motion.div;
+
+    const handleClick = (e: React.MouseEvent) => {
+        if (isHashLink) {
+            e.preventDefault();
+            const target = document.querySelector(href!);
+            target?.scrollIntoView({ behavior: "smooth" });
+        }
+        onClick?.();
+    };
 
     return (
         <Component
-            href={href}
-            onClick={onClick}
+            {...(href && !isHashLink ? { href } : {})}
+            onClick={handleClick}
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
             className={cn(

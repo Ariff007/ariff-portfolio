@@ -18,7 +18,7 @@ export default function Footer() {
     };
 
     return (
-        <footer className="w-full py-8 mt-20 border-t border-white/10 bg-black/40 backdrop-blur-sm">
+        <footer className="w-full py-8 mt-20 border-t border-white/10 bg-black/30 backdrop-blur-sm">
             <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
                 <div className="mb-4 md:mb-0">
                     <p className="text-gray-400 text-sm">
