@@ -9,6 +9,7 @@
   --color-secondary: #8b949e;
   --color-accent: #58a6ff;
   --color-border: rgba(240, 246, 252, 0.1);
+  --color-bento: rgba(0, 0, 0, 0.80);
 
   --font-sans: var(--font-google-sans), ui-sans-serif, system-ui, sans-serif;
 
@@ -20,7 +21,9 @@
 /* Custom Utilities */
 @layer utilities {
   .glass {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+    @apply backdrop-blur-lg;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.10);
   }
 
   .text-gradient {
@@ -41,14 +44,44 @@
 
 /* ── Light-mode colour overrides ── */
 :root[data-theme="light"] {
-  --color-background: #f6f8fa;
+  --color-background: #f0f4f9;
   --color-foreground: #1f2328;
-  --color-card:       #ffffff;
+  --color-card: #ffffff;
   --color-card-hover: #eaeef2;
-  --color-primary:    #1f6feb;
-  --color-secondary:  #57606a;
-  --color-accent:     #0969da;
-  --color-border:     rgba(31, 35, 40, 0.15);
+  --color-primary: #1f6feb;
+  --color-secondary: #57606a;
+  --color-accent: #0969da;
+  --color-border: rgba(31, 35, 40, 0.15);
+  --color-bento: #ffffff;
+}
+
+/* Light-mode utility overrides */
+:root[data-theme="light"] .glass {
+  background-color: rgba(255, 255, 255, 0.80);
+  border-color: rgba(31, 35, 40, 0.12);
+  backdrop-filter: blur(16px);
+}
+
+/* Light-mode: intro tile replaces the near-black gradient with white */
+:root[data-theme="light"] .intro-tile {
+  background: linear-gradient(135deg, #ffffff, #eef2ff) !important;
+}
+
+/* Light-mode: project card border */
+:root[data-theme="light"] .project-card {
+  border-color: rgba(31, 35, 40, 0.10);
+}
+
+/* Light-mode: tech stack tags */
+:root[data-theme="light"] .tech-tag {
+  background-color: rgba(31, 35, 40, 0.07);
+  color: #1f2328;
+  border-color: rgba(31, 35, 40, 0.15);
+}
+
+/* Light-mode: contact form inputs become slightly gray */
+:root[data-theme="light"] .contact-input {
+  background-color: rgba(31, 35, 40, 0.06);
 }
 
 @layer base {
@@ -57,8 +90,4 @@
     font-feature-settings: "rlig" 1, "calt" 1;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
-}
-
-html {
-  scroll-behavior: smooth;
-}
+}

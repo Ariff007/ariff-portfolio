@@ -7,10 +7,10 @@ import { motion } from "framer-motion";
 export default function Values() {
     const getIcon = (iconName: string) => {
         switch (iconName) {
-            case "user": return <FaUserFriends className="text-4xl text-blue-400 mb-4" />;
-            case "brain": return <FaBrain className="text-4xl text-purple-400 mb-4" />;
-            case "chart": return <FaChartLine className="text-4xl text-green-400 mb-4" />;
-            case "speech": return <FaComments className="text-4xl text-yellow-400 mb-4" />;
+            case "user": return <FaUserFriends className="text-4xl text-blue-500 mb-4" />;
+            case "brain": return <FaBrain className="text-4xl text-blue-500 mb-4" />;
+            case "chart": return <FaChartLine className="text-4xl text-blue-500 mb-4" />;
+            case "speech": return <FaComments className="text-4xl text-blue-500 mb-4" />;
             default: return null;
         }
     };
@@ -38,7 +38,7 @@ export default function Values() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className="relative group"
+                        className="relative group h-full"
                     >
                         {/* Gradient glow shadow — sits behind the card, outside its stacking context */}
                         <div
@@ -52,7 +52,7 @@ export default function Values() {
 
                         {/* Card — sits on top of the glow */}
                         <div
-                            className="relative p-6 rounded-2xl bg-card border border-white/5 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] overflow-hidden"
+                            className="relative p-6 rounded-2xl bg-card border border-white/5 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] overflow-hidden h-full flex flex-col"
                             style={{ zIndex: 1 }}
                         >
                             {/* Gradient border ring on hover */}

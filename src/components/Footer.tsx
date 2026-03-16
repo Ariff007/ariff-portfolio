@@ -18,10 +18,10 @@ export default function Footer() {
     };
 
     return (
-        <footer className="w-full py-8 mt-20 border-t border-white/10 bg-black/30 backdrop-blur-sm">
+        <footer className="w-full py-8 mt-20 border-t border-border bg-card/60 backdrop-blur-sm">
             <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
                 <div className="mb-4 md:mb-0">
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-secondary text-sm">
                         &copy; {currentYear} {SITE_CONFIG.name}. All rights reserved.
                     </p>
                 </div>
@@ -33,7 +33,7 @@ export default function Footer() {
                             href={social.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-gray-400 hover:text-white transition-colors text-xl"
+                            className="text-secondary hover:text-foreground transition-colors text-xl"
                             aria-label={social.name}
                         >
                             {getIcon(social.name)}

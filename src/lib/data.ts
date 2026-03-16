@@ -20,15 +20,15 @@ export const PROJECTS: Project[] = [
     {
         title: "GHG Emission Forecasting",
         description: "Malaysia's GHG emission forecasting using historical data and machine learning.",
-        image: "images/ghgEmission1.png", // specific placeholder
+        image: "images/ghg2.png", // specific placeholder
         tech: ["Python", "Scikit-learn", "XGBoost", "Prophet"],
         github: "https://github.com/Ariff007/ghg-emission-forecasting",
         demo: "https://github.com/Ariff007/ghg-emission-forecasting",
     },
     {
         title: "Reservoir Prediction",
-        description: "Reservoir production prediction using historical data and machine learning.",
-        image: "images/reservoir1.png",
+        description: "Machine learning project for predicting oil & gas reservoir production using historical well and reservoir data.",
+        image: "images/pythonLogo3.png",
         tech: ["Python", "XGBoost", "Scipy", "Scikit-learn"],
         github: "https://github.com/Ariff007/reservoir-production-prediction",
         demo: "https://github.com/Ariff007/reservoir-production-prediction",
@@ -36,7 +36,7 @@ export const PROJECTS: Project[] = [
     {
         title: "EcoTrack",
         description: "Mobile-first application for tracking carbon footprint and suggesting eco-friendly habits.",
-        image: "/projects/ecotrack.png",
+        image: "images/ecoTrack1.png",
         tech: ["Next.js", "Tailwind", "Prisma", "PostgreSQL"],
         github: "https://github.com/ariff/ecotrack",
         demo: "https://ecotrack.ariff.dev",

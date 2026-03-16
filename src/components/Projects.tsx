@@ -16,7 +16,7 @@ export default function Projects() {
                 className="text-center mb-16"
             >
                 <h2 className="text-3xl md:text-5xl font-bold mb-4">Featured Projects</h2>
-                <p className="text-gray-400 max-w-2xl mx-auto">
+                <p className="text-secondary max-w-2xl mx-auto">
                     A selection of projects that showcase my skills in AI, Web Development, and Security.
                 </p>
             </motion.div>
@@ -30,7 +30,7 @@ export default function Projects() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className="relative group"
+                        className="relative group h-full"
                     >
                         {/* Gradient glow shadow — sits behind the card */}
                         <div
@@ -44,7 +44,7 @@ export default function Projects() {
 
                         {/* Card — sits on top of the glow */}
                         <div
-                            className="relative rounded-2xl bg-card border border-white/5 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]"
+                            className="relative rounded-2xl bg-card border border-white/5 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] project-card h-full flex flex-col"
                             style={{ zIndex: 1 }}
                         >
                             {/* Gradient border ring on hover */}
@@ -58,32 +58,32 @@ export default function Projects() {
                             <div className="absolute inset-[1px] rounded-[14px] bg-card pointer-events-none" style={{ zIndex: 1 }} />
 
                             {/* Project Image */}
-                            <div className="relative h-48 w-full bg-gray-800 overflow-hidden" style={{ zIndex: 2 }}>
-                                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-700 to-gray-900 text-gray-500 group-hover:scale-105 transition-transform duration-500">
-                                    <span className="text-4xl">💻</span>
-                                    {/*<Image src={project.image} alt={project.title} fill className="object-contain" />*/}
+                            <div className="relative h-48 w-full overflow-hidden border-b border-border" style={{ zIndex: 2 }}>
+                                <div className="absolute inset-0 flex items-center justify-center text-gray-500 group-hover:scale-105 transition-transform duration-500">
+                                    {/*<span className="text-4xl">💻</span>*/}
+                                    <Image src={project.image} alt={project.title} fill className="object-contain" />
                                 </div>
                             </div>
 
-                            <div className="relative p-6" style={{ zIndex: 2 }}>
+                            <div className="relative p-6 flex flex-col flex-1" style={{ zIndex: 2 }}>
                                 <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{project.title}</h3>
-                                <p className="text-gray-400 text-sm mb-4 line-clamp-3">
+                                <p className="text-secondary text-sm mb-4 line-clamp-3">
                                     {project.description}
                                 </p>
 
                                 <div className="flex flex-wrap gap-2 mb-6">
                                     {project.tech.map((t) => (
-                                        <span key={t} className="px-2 py-1 text-xs rounded-md bg-white/5 text-gray-300 border border-white/5">
+                                        <span key={t} className="px-2 py-1 text-xs rounded-md bg-white/5 text-gray-300 border border-white/5 tech-tag">
                                             {t}
                                         </span>
                                     ))}
                                 </div>
 
-                                <div className="flex gap-4">
+                                <div className="flex gap-4 mt-auto pt-2">
                                     <Link
                                         href={project.github}
                                         target="_blank"
-                                        className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
+                                        className="flex items-center gap-2 text-sm text-secondary hover:text-foreground transition-colors"
                                     >
                                         <FaGithub /> Code
                                     </Link>

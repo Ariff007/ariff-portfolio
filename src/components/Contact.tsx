@@ -62,7 +62,7 @@ export default function Contact() {
                 className="text-center mb-12"
             >
                 <h2 className="text-3xl md:text-5xl font-bold mb-4">Get In Touch</h2>
-                <p className="text-gray-400">
+                <p className="text-secondary">
                     Have a project in mind or want to discuss the latest in AI? Send me a message.
                 </p>
             </motion.div>
@@ -72,11 +72,11 @@ export default function Contact() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 onSubmit={handleSubmit}
-                className="space-y-6 glass p-8 rounded-3xl"
+                className="space-y-6 bg-card border border-white/5 p-8 rounded-3xl"
             >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                        <label htmlFor="name" className="block text-sm font-medium text-secondary mb-2">
                             Name
                         </label>
                         <input
@@ -84,12 +84,12 @@ export default function Contact() {
                             id="name"
                             name="name"
                             required
-                            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary/10 outline-none transition-all placeholder:text-gray-600"
+                            className="w-full px-4 py-3 rounded-xl bg-background contact-input border border-border focus:border-primary focus:ring-1 focus:ring-primary/10 outline-none transition-all text-foreground placeholder:text-secondary/50"
                             placeholder="Ariff Azahari"
                         />
                     </div>
                     <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                        <label htmlFor="email" className="block text-sm font-medium text-secondary mb-2">
                             Email
                         </label>
                         <input
@@ -97,14 +97,14 @@ export default function Contact() {
                             id="email"
                             name="email"
                             required
-                            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary/10 outline-none transition-all placeholder:text-gray-600"
+                            className="w-full px-4 py-3 rounded-xl bg-background contact-input border border-border focus:border-primary focus:ring-1 focus:ring-primary/10 outline-none transition-all text-foreground placeholder:text-secondary/50"
                             placeholder="ariff@example.com"
                         />
                     </div>
                 </div>
 
                 <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-secondary mb-2">
                         Message
                     </label>
                     <textarea
@@ -112,7 +112,7 @@ export default function Contact() {
                         name="message"
                         required
                         rows={5}
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary/10 outline-none transition-all placeholder:text-gray-600"
+                        className="w-full px-4 py-3 rounded-xl bg-background contact-input border border-border focus:border-primary focus:ring-1 focus:ring-primary/10 outline-none transition-all text-foreground placeholder:text-secondary/50"
                         placeholder="Tell me about your project or just say hi..."
                     ></textarea>
                 </div>
@@ -130,7 +130,7 @@ export default function Contact() {
                         ? "bg-green-500 text-white"
                         : status === "error"
                             ? "bg-red-500/80 text-white"
-                            : "bg-primary hover:bg-blue-600 text-white shadow-lg shadow-primary/25"
+                            : "bg-primary hover:bg-blue-600 text-white"
                         }`}
                 >
                     {status === "submitting" ? (

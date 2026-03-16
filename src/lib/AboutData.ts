@@ -3,6 +3,7 @@ export const aboutData = {
         "I'm a data scientist and occasional developer with a deep passion for turning raw, complex data into intelligent systems that solve real-world problems. My work spans the full spectrum - from wrangling messy datasets and training machine learning models, to architecting scalable web applications and deploying production-grade AI pipelines.",
         "With a strong foundation in computational intelligence from IIUM, I've built hands-on experience across machine learning, natural language processing, computer vision, and cybersecurity analytics. I believe the most impactful engineers are those who can bridge the gap between cutting-edge research and practical engineering - and that's the space I thrive in.",
         "Outside of code, I'm drawn to the intersection of AI and security - understanding how intelligent systems can be both weapons and shields. I'm always exploring, always building, and always looking for the next hard problem worth solving.",
+        "When I'm away from the keyboard, I stay active through sports. I regularly spend time swimming, hiking, playing badminton, futsal, and I enjoy participating in other sports whenever the opportunity comes. For me, staying physically active is a great way to recharge, maintain discipline, and keep a balanced lifestyle."
     ],
 
     education: [

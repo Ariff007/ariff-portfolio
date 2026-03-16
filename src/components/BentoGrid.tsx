@@ -37,7 +37,7 @@ export default function BentoTile({ className, children, backgroundImage, onClic
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
             className={cn(
                 "relative overflow-hidden rounded-2xl bg-card shadow-xl group",
-                "hover:shadow-2xl transition-all duration-100",
+                "hover:shadow-xl transition-all duration-100",
                 className
             )}
         >

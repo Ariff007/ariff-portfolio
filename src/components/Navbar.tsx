@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -24,12 +23,17 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [activeSection, setActiveSection] = useState("home");
     const [isVisible, setIsVisible] = useState(false);
-    const pathname = usePathname();
+
+    const scrollToSection = (id: string) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const top = el.getBoundingClientRect().top + window.scrollY - 70; // 70px navbar offset
+        window.scrollTo({ top, behavior: 'smooth' });
+    };
 
     const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
         e.preventDefault();
-        const id = href.replace('#', '');
-        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+        scrollToSection(href.replace('#', ''));
     };
 
     useEffect(() => {
@@ -108,8 +112,8 @@ export default function Navbar() {
                                         className={cn(
                                             "px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200",
                                             isActive
-                                                ? "text-white bg-white/10"
-                                                : "text-gray-300 hover:text-white hover:bg-white/5"
+                                                ? "text-foreground bg-foreground/10"
+                                                : "text-secondary hover:text-foreground hover:bg-foreground/5"
                                         )}
                                     >
                                         {item.name}
@@ -124,9 +128,9 @@ export default function Navbar() {
                         <button
                             onClick={() => setIsOpen(!isOpen)}
                             type="button"
-                            className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-1 focus:ring-inset focus:ring-white/40"
+                            className="inline-flex items-center justify-center p-2 rounded-md text-secondary hover:text-foreground hover:bg-foreground/10 focus:outline-none focus:ring-1 focus:ring-inset focus:ring-foreground/40"
                             aria-controls="mobile-menu"
-                            aria-expanded="false"
+                            aria-expanded={isOpen}
                         >
                             <span className="sr-only">Open main menu</span>
                             {isOpen ? <FaTimes className="block h-6 w-6" /> : <FaBars className="block h-6 w-6" />}
@@ -150,19 +154,21 @@ export default function Navbar() {
                                 const isActive = activeSection === sectionId;
 
                                 return (
-                                    <Link
+                                    <button
                                         key={item.name}
-                                        href={item.href}
-                                        onClick={(e) => { handleNavClick(e, item.href); setIsOpen(false); }}
+                                        onClick={() => {
+                                            setIsOpen(false);
+                                            setTimeout(() => scrollToSection(sectionId), 50);
+                                        }}
                                         className={cn(
-                                            "block px-3 py-2 rounded-md text-base font-medium transition-colors",
+                                            "block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors",
                                             isActive
-                                                ? "text-white bg-white/10"
-                                                : "text-gray-300 hover:text-white hover:bg-white/10"
+                                                ? "text-foreground bg-foreground/10"
+                                                : "text-secondary hover:text-foreground hover:bg-foreground/10"
                                         )}
                                     >
                                         {item.name}
-                                    </Link>
+                                    </button>
                                 );
                             })}
                         </div>

@@ -38,7 +38,7 @@ export const metadata: Metadata = {
         title: SITE_CONFIG.title,
         description: SITE_CONFIG.description,
         images: [SITE_CONFIG.ogImage],
-        creator: "@ariff",
+        creator: "@ariff_azahari",
     },
     icons: {
         icon: "/images/logo2-circle.png",
